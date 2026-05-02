@@ -10,6 +10,13 @@
 ## Prompt 2 - README inicial
 
 > **Contexto:** MVP de uma micro API de gerenciamento de referência (livros, artigos, etc) de estudos, visando maior organização.<br>
-> **Objetivo:** Criar um README inicial com descrição, objetivo, stack utilizada, tutorial de como rodar localmente e roadmap d relases do projeto.<br>
+> **Objetivo:** Criar um README inicial com descrição, objetivo, stack utilizada, tutorial de como rodar localmente e roadmap de relases do projeto.<br>
 > **Estilo:** Markdown simples, objetivo e profissional.<br>
 > **Resposta**: Gerar o arquivo README completo na raiz do projeto. <br>
+
+## Prompt 3 - Arquitetura Mermaid
+
+> **Contexto:** Uso de Prisma ORM + SQLit e Express.js com Typescript com camadas repository, service e controllers para micro API de gerenciamento de referências para estudos.<br>
+> **Objetivo:** Gerar diagrama mermaid de componentes e fluxo de dados.<br>
+> **Estilo:** Simples, objetivo e versionável.<br>
+> **Resposta**: Gerar o bloco mermaid. <br>

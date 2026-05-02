@@ -1,0 +1,21 @@
+flowchart LR
+    Client[Cliente / Consumer]
+
+    Client -- Request --> Routes
+
+    subgraph API [Study Hub API]
+        direction LR
+        Routes[Routes] --> Middlewares[Middlewares]
+        Middlewares --> Schemas[Schemas / Validation]
+        Schemas --> Controllers[Controllers]
+        Controllers --> Services[Services]
+        Services --> Repositories[Repositories]
+        Types[Types / Interfaces] -.-> Controllers
+        Types -.-> Services
+        Types -.-> Repositories
+    end
+
+    Repositories --> Prisma[Prisma ORM]
+    Prisma --> SQLite[(SQLite)]
+
+    Routes -- Response --> Client
