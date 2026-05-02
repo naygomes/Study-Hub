@@ -6,3 +6,10 @@
 > **Objetivo:** Criação de um documento com os requisitos funcionais e não funcionais da aplicação, tais como: Criar, atualizar, consultar e deletar uma referência (CRUD básica); avaliação de uma referência com notas de 1 à 5; busca de referências por categoria, status, tags e nota de avaliação.<br>
 > **Estilo:** Utilização da linguagem Node.js com Typescript com Prisma ORM + SQLite, nodemon para hot reload e Jest para testes unitários.<br>
 > **Resposta**: Um arquivo markdown contendo as seções com Requisitos funcionais e não funcionais da micro API. <br>
+
+## Prompt 2 - README inicial
+
+> **Contexto:** MVP de uma micro API de gerenciamento de referência (livros, artigos, etc) de estudos, visando maior organização.<br>
+> **Objetivo:** Criar um README inicial com descrição, objetivo, stack utilizada, tutorial de como rodar localmente e roadmap d relases do projeto.<br>
+> **Estilo:** Markdown simples, objetivo e profissional.<br>
+> **Resposta**: Gerar o arquivo README completo na raiz do projeto. <br>
