@@ -73,3 +73,10 @@
 > **Objetivo:** Gerar o middleware que se conecta aos schemas de validação epara validar os dados inseridos em cada request.<br>
 > **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes.<br>
 > **Resposta:** Criar o arquivo validateReference que valide corretamente os dados de entrada da requisição.<br>
+
+## Prompt 10 - Rotas de Referências
+
+> **Contexto:** Estou desenvolvendo uma micro API chamada "StudyHub", um gerenciador de links de estudo.<br>
+> **Objetivo:** Gerar a camada de rotas completa que disponibiliza a API para uso.<br>
+> **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes.<br>
+> **Resposta:** Criar o arquivo reference-routes com um método para cada respectivo método da controller e que utilize o middleware validateReference para validar os dados de entrada da requisição.<br>
