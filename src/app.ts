@@ -14,7 +14,7 @@ app.get("/health", (_req: Request, res: Response) => {
     timestamp: new Date().toISOString(),
   });
 });
-app.use("/references", referenceRoutes);
+app.use("/api/v1/references", referenceRoutes);
 
 app.use(errorHandler);
 

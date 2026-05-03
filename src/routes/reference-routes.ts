@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { ReferenceController } from "@controllers";
-import { validateReference } from "@middlewares";
+import { validate } from "@middlewares";
 import {
   createReferenceSchema,
   referenceFiltersSchema,
@@ -14,36 +14,40 @@ const controller = new ReferenceController();
 
 router.get(
   "/",
-  validateReference(referenceFiltersSchema, "query"),
-  (req, res) => controller.getAll(req, res),
+  validate(referenceFiltersSchema, "query"),
+  controller.getAll.bind(controller),
 );
 
-router.get("/:id", validateReference(referenceIdSchema, "params"), (req, res) =>
-  controller.getById(req, res),
-);
-
-router.post("/", validateReference(createReferenceSchema), (req, res) =>
-  controller.create(req, res),
-);
-
-router.put(
+router.get(
   "/:id",
-  validateReference(referenceIdSchema, "params"),
-  validateReference(updateReferenceSchema),
-  (req, res) => controller.update(req, res),
+  validate(referenceIdSchema, "params"),
+  controller.getById.bind(controller),
+);
+
+router.post(
+  "/",
+  validate(createReferenceSchema),
+  controller.create.bind(controller),
+);
+
+router.patch(
+  "/:id",
+  validate(referenceIdSchema, "params"),
+  validate(updateReferenceSchema),
+  controller.update.bind(controller),
 );
 
 router.delete(
   "/:id",
-  validateReference(referenceIdSchema, "params"),
-  (req, res) => controller.delete(req, res),
+  validate(referenceIdSchema, "params"),
+  controller.delete.bind(controller),
 );
 
 router.patch(
   "/:id/rating",
-  validateReference(referenceIdSchema, "params"),
-  validateReference(updateRatingSchema),
-  (req, res) => controller.updateRating(req, res),
+  validate(referenceIdSchema, "params"),
+  validate(updateRatingSchema),
+  controller.updateRating.bind(controller),
 );
 
 export { router as referenceRoutes };
