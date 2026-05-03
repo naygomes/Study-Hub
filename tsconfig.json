@@ -23,8 +23,8 @@
       "@types": ["src/types/index.ts"],
       "@errors": ["src/errors/index.ts"]
     },
-    "types": ["node"]
+    "types": ["node", "jest"]
   },
   "include": ["src/**/*", "prisma/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+  "exclude": ["node_modules", "dist"]
 }
