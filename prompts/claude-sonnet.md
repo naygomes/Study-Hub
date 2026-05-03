@@ -17,3 +17,10 @@
 > **Contexto:** API com arquitetura em camadas, utilizando Express com Prisma ORM e SQLite para banco de dados e Jest para testes unitários<br>
 > **Objetivo:** Configuração do Jest no projeto node.js com typescript e express para que qualquer teste seja executado com sucesso.<br>
 > **Resposta**: Arquivo de configuração jest completo e um arquivo de testes para garantir que a configuração está correta. <br>
+
+## Prompt 3 - Arquivo App.ts
+
+> **Contexto:** API com arquitetura em camadas, utilizando Express com Prisma ORM e SQLite para banco de dados e Jest para testes unitários<br>
+> **Objetivo:** Gerar arquivo app.ts com rota que permite inicializar o servidor e verifica a saúde da aplicação.<br>
+> **Estilo:** Arquivo Typescript simples e direto. <br>
+> **Resposta**: Arquivo app.ts com inicialização do servidor Node.js com Express, rota /health que verifica saúde do servidor e mensagem de feedback indicando ao usuário que o servidor foi inicializado. <br>
