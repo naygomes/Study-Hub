@@ -66,3 +66,10 @@
 > **Objetivo:** Gerar os schemas de validação dos dados necessários para a request.<br>
 > **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes.<br>
 > **Resposta:** Criar o arquivo com os schemas de validação de cada método existente na controller.<br>
+
+## Prompt 9 - Middleware de Referências
+
+> **Contexto:** Estou desenvolvendo uma micro API chamada "StudyHub", um gerenciador de links de estudo.<br>
+> **Objetivo:** Gerar o middleware que se conecta aos schemas de validação epara validar os dados inseridos em cada request.<br>
+> **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes.<br>
+> **Resposta:** Criar o arquivo validateReference que valide corretamente os dados de entrada da requisição.<br>
