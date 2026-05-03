@@ -31,3 +31,10 @@
 > **Objetivo:** Gerar as configurações necessárias para a integração inicial do Prisma com SQLite no projeto: arquivo schema.prisma com provider SQLite e model de exemplo, arquivo prisma.ts para instanciar e exportar o PrismaClient como singleton, e a variável DATABASE_URL necessária no .env.<br>
 > **Estilo:** Código TypeScript simples, direto e sem abstrações desnecessárias. Seguir o padrão já adotado no projeto.<br>
 > **Resposta:** Fornecer o arquivo prisma/schema.prisma, o arquivo src/lib/prisma.ts com o singleton do PrismaClient, e o trecho a adicionar no .env. Incluir também o comando para gerar o banco após a configuração.<br>
+
+## Prompt 5 - Modelagem inicial Prisma
+
+> **Contexto:** Estou desenvolvendo uma micro API chamada "StudyHub", um gerenciador de links de estudo.<br>
+> **Objetivo:** Gerar a modelagem completa do banco de dados utilizando Prisma ORM (com SQLite) e as definições de modelos em TypeScript. A entidade principal é Referencia (Recursos/Links). Além disso, inclua campos para controle de status (Pendente, Lendo, Concluído e revisar) e um campo tag, que salvara um array de tags.<br>
+> **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code, utilizar tipagem forte com TypeScript e seguir as convenções de nomes (camelCase para campos, PascalCase para modelos).<br>
+> **Resposta:** Atualizar o arquivo prisma/schema.prisma se necessário, gerar um arquivo de seed básico que popula o banco de dados e, os modelos (Interfaces/Types) em TypeScript que reflitam esse esquema para uso nos serviços e incluir também o comando para gerar o banco após a configuração.<br>
