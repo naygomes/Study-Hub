@@ -33,7 +33,7 @@ export class ReferenceRepository {
       orderBy: { createdAt: "desc" },
     });
 
-    return references.map(this.deserializeTags);
+    return references.map((ref: any) => this.deserializeTags(ref));
   }
 
   async findById(id: number) {
@@ -59,13 +59,17 @@ export class ReferenceRepository {
   }
 
   async update(id: number, data: UpdateReferenceData) {
-    const { tags, ...rest } = data;
-
     const reference = await this.db.reference.update({
       where: { id },
       data: {
-        ...rest,
-        ...(tags !== undefined && { tags: JSON.stringify(tags) }),
+        title: data.title,
+        description: data.description ?? null,
+        author: data.author ?? null,
+        url: data.url,
+        category: data.category?.toLowerCase(),
+        status: data.status,
+        rating: data.rating ?? null,
+        ...(data.tags !== undefined && { tags: JSON.stringify(data.tags) }),
       },
     });
 
@@ -83,6 +87,5 @@ export class ReferenceRepository {
 
   async delete(id: number) {
     await this.db.reference.delete({ where: { id } });
-    return { message: "Referência deletada com sucesso." };
   }
 }
