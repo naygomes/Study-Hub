@@ -14,9 +14,16 @@ model Reference {
   author      String?
   url         String?
   category    String
-  status      String   @default("pending")
+  status      Status   @default(pending)
   tags        String?
   rating      Int?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+enum Status {
+  pending
+  reading
+  completed
+  review
 }
