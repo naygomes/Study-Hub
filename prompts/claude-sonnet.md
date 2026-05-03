@@ -52,3 +52,10 @@
 > **Objetivo:** Gerar a camada de services completa que se conecta ao repository e contém todas as regras de negócio contida no arquivo de requisitos para cada método da CRUD<br>
 > **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes (PascalCase para services).<br>
 > **Resposta:** Criar o arquivo ReferenceService com um método para cada respectivo método da classe ReferenceRepository.<br>
+
+## Prompt 7 - Controller de Referências
+
+> **Contexto:** Estou desenvolvendo uma micro API chamada "StudyHub", um gerenciador de links de estudo.<br>
+> **Objetivo:** Gerar a camada de controller completa que recebe a requisição, se conecta ao service e retorna a resposta de cada método existente<br>
+> **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes (PascalCase para Controller).<br>
+> **Resposta:** Criar o arquivo ReferenceController com um método para cada respectivo método da classe ReferenceService.<br>
