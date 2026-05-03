@@ -12,7 +12,7 @@ model Reference {
   title       String
   description String?
   author      String?
-  url         String?
+  url         String
   category    String
   status      Status   @default(pending)
   tags        String?

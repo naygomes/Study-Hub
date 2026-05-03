@@ -5,12 +5,11 @@ export interface Reference {
   title: string;
   description?: string | null;
   author?: string | null;
-  url?: string | null;
+  url: string;
   status: Status;
-  tags: string[];
+  tags?: string[] | null;
   rating?: number | null;
-  categoryId: number;
-  category?: string;
+  category: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -19,7 +18,7 @@ export type CreateReferenceInput = Omit<
   Reference,
   "id" | "createdAt" | "updatedAt"
 > & {
-  tags: string[];
+  tags?: string[] | null;
 };
 
 export type UpdateReferenceInput = Partial<CreateReferenceInput>;
