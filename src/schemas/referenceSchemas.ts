@@ -2,18 +2,20 @@ import { z } from "zod";
 
 const statusEnum = z.enum(["pending", "reading", "completed", "review"]);
 
+const urlSchema = z.string().refine((val) => {
+  try {
+    new URL(val);
+    return true;
+  } catch {
+    return false;
+  }
+}, "A URL informada é inválida.");
+
 export const createReferenceSchema = z.object({
   title: z.string().min(1, "O título é obrigatório."),
   description: z.string().optional().nullable(),
   author: z.string().optional().nullable(),
-  url: z.string().refine((val) => {
-    try {
-      new URL(val);
-      return true;
-    } catch {
-      return false;
-    }
-  }, "A URL informada é inválida."),
+  url: urlSchema,
   category: z.string().min(1, "A categoria é obrigatória."),
   status: statusEnum.default("pending"),
   tags: z.array(z.string()).optional().nullable(),
@@ -24,17 +26,7 @@ export const updateReferenceSchema = z.object({
   title: z.string().min(1, "O título não pode ser vazio.").optional(),
   description: z.string().optional().nullable(),
   author: z.string().optional().nullable(),
-  url: z
-    .string()
-    .refine((val) => {
-      try {
-        new URL(val);
-        return true;
-      } catch {
-        return false;
-      }
-    }, "A URL informada é inválida.")
-    .optional(),
+  url: urlSchema.optional(),
   category: z.string().min(1, "A categoria não pode ser vazia.").optional(),
   status: statusEnum.optional(),
   tags: z.array(z.string()).optional().nullable(),
@@ -45,7 +37,7 @@ export const updateRatingSchema = z.object({
   rating: z
     .number()
     .int("A nota deve ser um número inteiro.")
-    .min(0, "A nota mínima é 0.")
+    .min(1, "A nota mínima é 1.")
     .max(5, "A nota máxima é 5."),
 });
 
