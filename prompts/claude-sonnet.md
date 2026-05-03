@@ -81,6 +81,28 @@
 > **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes.<br>
 > **Resposta:** Criar o arquivo reference-routes com um método para cada respectivo método da controller e que utilize o middleware validateReference para validar os dados de entrada da requisição.<br>
 
-## Prompt 11 - Refatoração Services
+## Prompt 11 - Refatoração ReferenceServices
 
-> Como engenheiro de software sênior, refatore a camada de service da entidade Reference para que não haja mais a validação dos dados de entrada, visto que essa validação já está sendo feita na camada de Schema/validation com a ferramenta Zod. A resposta deverá conter o código atualizado do arquivo ReferenceService.
+> Como engenheiro de software sênior, refatore a camada de service da entidade Reference para que não haja mais a validação dos dados de entrada, visto que essa validação já está sendo feita na camada de Schema/validation com a ferramenta Zod. A resposta deverá conter o código atualizado do arquivo ReferenceService. Além disso, revise o arquivo ReferenceService e me sugira melhorias nos métodos existentes, adotando boas práticas de desenvolvimento.
+
+## Prompt 12 - Refatoração ReferenceRepository
+
+> Como engenheiro de software, revise o arquivo ReferenceRepository e me sugira melhorias nos métodos existentes, adotando boas práticas de desenvolvimento.
+
+## Prompt 13 - Refatoração ReferenceController
+
+> Como engenheiro de software, revise o arquivo ReferenceController e me sugira melhorias nos métodos existentes, adotando boas práticas de desenvolvimento.
+
+## Prompt 13 - Refatoração referenceSchemas
+
+> Como engenheiro de software, revise o arquivo referenceSchema e me sugira melhorias nas validações existentes, adotando boas práticas de desenvolvimento.
+
+## Prompt 14 - Refatoração Middlewares
+
+> Como engenheiro de software, revise o arquivo validateReference e me sugira melhorias, adotando boas práticas de desenvolvimento.
+
+> Como engenheiro de software, revise o arquivo errorHandler e me sugira melhorias, adotando boas práticas de desenvolvimento.
+
+## Prompt 15 - Refatoração reference routes
+
+> Como engenheiro de software, revise o arquivo reference-routes e me sugira melhorias nos métodos existentes, adotando boas práticas de desenvolvimento.
