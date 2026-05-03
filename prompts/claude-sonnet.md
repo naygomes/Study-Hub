@@ -59,3 +59,10 @@
 > **Objetivo:** Gerar a camada de controller completa que recebe a requisição, se conecta ao service e retorna a resposta de cada método existente<br>
 > **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes (PascalCase para Controller).<br>
 > **Resposta:** Criar o arquivo ReferenceController com um método para cada respectivo método da classe ReferenceService.<br>
+
+## Prompt 8 - Schema para validação de Referências
+
+> **Contexto:** Estou desenvolvendo uma micro API chamada "StudyHub", um gerenciador de links de estudo.<br>
+> **Objetivo:** Gerar os schemas de validação dos dados necessários para a request.<br>
+> **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes.<br>
+> **Resposta:** Criar o arquivo com os schemas de validação de cada método existente na controller.<br>
