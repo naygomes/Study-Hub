@@ -38,3 +38,10 @@
 > **Objetivo:** Gerar a modelagem completa do banco de dados utilizando Prisma ORM (com SQLite) e as definições de modelos em TypeScript. A entidade principal é Referencia (Recursos/Links). Além disso, inclua campos para controle de status (Pendente, Lendo, Concluído e revisar) e um campo tag, que salvara um array de tags.<br>
 > **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code, utilizar tipagem forte com TypeScript e seguir as convenções de nomes (camelCase para campos, PascalCase para modelos).<br>
 > **Resposta:** Atualizar o arquivo prisma/schema.prisma se necessário, gerar um arquivo de seed básico que popula o banco de dados e, os modelos (Interfaces/Types) em TypeScript que reflitam esse esquema para uso nos serviços e incluir também o comando para gerar o banco após a configuração.<br>
+
+## Prompt 5 - Repository de Referências
+
+> **Contexto:** Estou desenvolvendo uma micro API chamada "StudyHub", um gerenciador de links de estudo.<br>
+> **Objetivo:** Gerar a camada de repository completa que faz a busca dos dados no banco, contendo todos os métodos da CRUD, além do método que registra uma nota de avaliação e a possibilidade de fazer uma busca das referencias com filtro por tag, categoria e status<br>
+> **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes (PascalCase para modelos).<br>
+> **Resposta:** Criar o arquivo ReferenceRepository com os metodos de consulta ao banco de dados<br>
