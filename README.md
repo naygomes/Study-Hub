@@ -86,21 +86,35 @@ cd studyHub
 npm install
 ```
 
-### 3. Configurar o banco de dados
+### 3. Configurar as variáveis de ambiente
+
+Crie um arquivo .env na raiz do projeto com base no .env.example:
+
+```bash
+cp .env.example .env
+```
+
+### 4. Configurar o banco de dados
 
 Como o projeto utiliza Prisma com SQLite, gere o banco local com:
 
 ```bash
-npx prisma migrate dev
+yarn prisma:prod
+```
+
+Para popular o banco com um seed básico:
+
+```bash
+yarn prisma:seed
 ```
 
 Se necessário, também é possível abrir o Prisma Studio com:
 
 ```bash
-npx prisma studio
+yarn prisma:studio
 ```
 
-### 4. Rodar a aplicação em modo desenvolvimento
+### 5. Rodar a aplicação em modo desenvolvimento
 
 ```bash
 npm run dev
@@ -112,7 +126,7 @@ A aplicação deverá iniciar localmente em uma porta definida no projeto, por e
 http://localhost:3000
 ```
 
-### 5. Rodar a aplicação em modo produção
+### 6. Rodar a aplicação em modo produção
 
 ```bash
 npm run build
@@ -129,10 +143,11 @@ Os scripts abaixo são os esperados para o projeto:
     "dev": "nodemon src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
-    "prisma:migrate": "prisma migrate dev",
+    "prisma:dev": "prisma migrate dev",
+    "prisma:prod": "prisma migrate deploy",
+    "prisma:seed": "prisma db seed",
     "prisma:studio": "prisma studio",
     "test": "jest",
-    "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   }
 }
