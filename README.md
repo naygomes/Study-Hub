@@ -117,7 +117,7 @@ yarn prisma:studio
 ### 5. Rodar a aplicação em modo desenvolvimento
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 A aplicação deverá iniciar localmente em uma porta definida no projeto, por exemplo:
@@ -129,8 +129,8 @@ http://localhost:3000
 ### 6. Rodar a aplicação em modo produção
 
 ```bash
-npm run build
-npm start
+yarn build
+yarn start
 ```
 
 ## Scripts Esperados
@@ -169,7 +169,7 @@ Content-Type: application/json
   "author": "Robert C. Martin",
   "url": "https://example.com/clean-code",
   "category": "livro",
-  "status": "pendente",
+  "status": "pending",
   "tags": ["arquitetura", "boas-praticas"],
   "rating": 5
 }
@@ -178,7 +178,7 @@ Content-Type: application/json
 ### Buscar referências com filtros
 
 ```http
-GET /references?category=livro&status=pendente&rating=5
+GET /references?category=livro&status=pending&rating=5
 ```
 
 ## Roadmap de Releases
@@ -194,20 +194,21 @@ GET /references?category=livro&status=pendente&rating=5
 
 - implementação do CRUD de referências
 - modelagem inicial no Prisma
-- validação básica de entrada
+- validação de entrada
 - respostas padronizadas da API
+- tratamento de erros
+- filtros por categoria, status e tag
+- busca combinada
 
 ### v0.3.0
 
-- filtros por categoria, status, tags e nota
-- busca combinada
 - melhoria da organização de rotas e serviços
+- ajustes finos nas camadas da arquitetura
+- documentação da API
 
 ### v0.4.0
 
-- documentação da API
 - testes automatizados das rotas principais
-- refinamento de tratamento de erros
 - preparação para evolução futura da aplicação
 
 ## Status do Projeto
@@ -216,11 +217,10 @@ Projeto em fase inicial de definição e estruturação do MVP.
 
 ## Próximos Passos
 
-- inicializar o projeto Node.js com TypeScript
-- configurar Express
-- criar schema inicial do Prisma
-- modelar a entidade de referência
-- implementar rotas e regras de negócio do MVP
+- Escrita de testes unitários automatizados com Jest;
+- Criar rota de atualização de status;
+- Hospedar API em um Docker container;
+- Criar interface frontend para consumir a API.
 
 ## Licença
 
