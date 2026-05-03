@@ -36,7 +36,7 @@ export class ReferenceService {
 
   async delete(id: number) {
     await this.getById(id);
-    return this.repository.delete(id);
+    await this.repository.delete(id);
   }
 
   async updateRating(id: number, rating: number) {
