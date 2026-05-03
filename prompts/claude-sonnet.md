@@ -45,3 +45,10 @@
 > **Objetivo:** Gerar a camada de repository completa que faz a busca dos dados no banco, contendo todos os métodos da CRUD, além do método que registra uma nota de avaliação e a possibilidade de fazer uma busca das referencias com filtro por tag, categoria e status<br>
 > **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes (PascalCase para modelos).<br>
 > **Resposta:** Criar o arquivo ReferenceRepository com os metodos de consulta ao banco de dados<br>
+
+## Prompt 6 - Service de Referências
+
+> **Contexto:** Estou desenvolvendo uma micro API chamada "StudyHub", um gerenciador de links de estudo.<br>
+> **Objetivo:** Gerar a camada de services completa que se conecta ao repository e contém todas as regras de negócio contida no arquivo de requisitos para cada método da CRUD<br>
+> **Estilo:** Adote o papel de um Arquiteto de Software Sênior. O código deve ser limpo, seguir as melhores práticas de Clean Code utilizando express, utilizar tipagem forte com TypeScript e seguir as convenções de nomes (PascalCase para services).<br>
+> **Resposta:** Criar o arquivo ReferenceService com um método para cada respectivo método da classe ReferenceRepository.<br>
