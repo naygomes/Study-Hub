@@ -106,3 +106,11 @@
 ## Prompt 15 - Refatoração reference routes
 
 > Como engenheiro de software, revise o arquivo reference-routes e me sugira melhorias nos métodos existentes, adotando boas práticas de desenvolvimento.
+
+## Prompt 16 - Testes unitários do Repository de Referências
+
+> **Contexto:** Micro API "StudyHub" com arquitetura em camadas (Repository → Service → Controller), construída com Node.js, TypeScript, Express e Prisma ORM com SQLite. O arquivo `ReferenceRepository.ts` é a camada de acesso ao banco de dados e contém os métodos: `findAll`, `findById`, `create`, `update`, `updateRating` e `delete`. O projeto utiliza Jest com `ts-jest` para testes. O `PrismaClient` é injetado via construtor, o que permite substituição por mock nos testes.<br>
+> **Objetivo:** Gerar testes unitários completos para todos os métodos da classe `ReferenceRepository`, cobrindo os cenários de sucesso e os principais cenários de erro de cada método. O `PrismaClient` deve ser mockado para que os testes não dependam do banco de dados real.<br>
+> **Estilo:** Adote o papel de um Engenheiro de Software Sênior especialista em testes. O código deve ser limpo, legível e seguir as melhores práticas de testes unitários com Jest: um `describe` por método, nomes de testes descritivos no padrão `should [comportamento esperado] when [condição]`, uso de `beforeEach` para resetar mocks, e sem lógica de negócio nos testes.<br>
+> **Audiência:** Desenvolvedor que já conhece o projeto e implementará os testes imediatamente.<br>
+> **Resposta:** Fornecer o arquivo `src/repositories/__tests__/ReferenceRepository.test.ts` completo, com mock do `PrismaClient`, cobrindo ao menos os seguintes cenários por método: sucesso com dados válidos, retorno vazio/nulo quando não encontrado, e propagação de erro quando o Prisma lança exceção.<br>
