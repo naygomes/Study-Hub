@@ -26,9 +26,11 @@
   "homepage": "https://github.com/naygomes/Study-Hub#readme",
   "dependencies": {
     "@prisma/client": "^6.7.0",
+    "dotenv": "^17.4.2",
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "@types/dotenv": "^8.2.3",
     "@types/express": "^5.0.1",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.3",
