@@ -24,3 +24,10 @@
 > **Objetivo:** Gerar arquivo app.ts com rota que permite inicializar o servidor e verifica a saúde da aplicação.<br>
 > **Estilo:** Arquivo Typescript simples e direto. <br>
 > **Resposta**: Arquivo app.ts com inicialização do servidor Node.js com Express, rota /health que verifica saúde do servidor e mensagem de feedback indicando ao usuário que o servidor foi inicializado. <br>
+
+## Prompt 4 - Configuração Prisma/SQLite
+
+> **Contexto:** API REST com arquitetura em camadas (Routes → Middlewares → Controllers → Services → Repositories), construída com Node.js, TypeScript e Express. O projeto utiliza Prisma ORM como camada de acesso ao banco de dados e SQLite como banco de dados local. O arquivo schema.prisma ainda não foi configurado e o banco ainda não foi gerado.<br>
+> **Objetivo:** Gerar as configurações necessárias para a integração inicial do Prisma com SQLite no projeto: arquivo schema.prisma com provider SQLite e model de exemplo, arquivo prisma.ts para instanciar e exportar o PrismaClient como singleton, e a variável DATABASE_URL necessária no .env.<br>
+> **Estilo:** Código TypeScript simples, direto e sem abstrações desnecessárias. Seguir o padrão já adotado no projeto.<br>
+> **Resposta:** Fornecer o arquivo prisma/schema.prisma, o arquivo src/lib/prisma.ts com o singleton do PrismaClient, e o trecho a adicionar no .env. Incluir também o comando para gerar o banco após a configuração.<br>
