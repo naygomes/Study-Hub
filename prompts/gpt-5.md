@@ -5,7 +5,7 @@
 > **Contexto:** MVP de uma micro API de gerenciamento de referência (livros, artigos, etc) de estudos, visando maior organização.<br>
 > **Objetivo:** Criação de um documento com os requisitos funcionais e não funcionais da aplicação, tais como: Criar, atualizar, consultar e deletar uma referência (CRUD básica); avaliação de uma referência com notas de 1 à 5; busca de referências por categoria, status, tags e nota de avaliação.<br>
 > **Estilo:** Utilização da linguagem Node.js com Typescript com Prisma ORM + SQLite, nodemon para hot reload e Jest para testes unitários.<br>
-> **Resposta**: Um arquivo markdown contendo as seções com Requisitos funcionais e não funcionais da micro API. <br>
+> **Resposta**: Um arquivo markdown contendo as sessões com Requisitos funcionais e não funcionais da micro API. <br>
 
 ## Prompt 2 - README inicial
 
@@ -16,7 +16,7 @@
 
 ## Prompt 3 - Arquitetura Mermaid
 
-> **Contexto:** Uso de Prisma ORM + SQLit e Express.js com Typescript com camadas repository, service e controllers para micro API de gerenciamento de referências para estudos.<br>
-> **Objetivo:** Gerar diagrama mermaid de componentes e fluxo de dados.<br>
+> **Contexto:** Uso de Prisma ORM + SQLite e Express.js com Typescript com camadas repository, service e controllers para micro API de gerenciamento de referências para estudos.<br>
+> **Objetivo:** Gerar diagrama mermaid de componentes e fluxo de dados da arquitetura proposta para este projeto.<br>
 > **Estilo:** Simples, objetivo e versionável.<br>
 > **Resposta**: Gerar o bloco mermaid. <br>
