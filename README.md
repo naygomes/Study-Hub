@@ -71,7 +71,7 @@ A estrutura inicial prevista para a API é a seguinte:
 Antes de começar, você precisa ter instalado:
 
 - Node.js 20 ou superior
-- npm 10 ou superior
+- yarn 1.22 ou superior
 
 ### 1. Clonar o repositório
 
@@ -83,7 +83,7 @@ cd studyHub
 ### 2. Instalar as dependências
 
 ```bash
-npm install
+yarn install
 ```
 
 ### 3. Configurar as variáveis de ambiente
@@ -92,6 +92,13 @@ Crie um arquivo .env na raiz do projeto com base no .env.example:
 
 ```bash
 cp .env.example .env
+```
+
+Preencha o arquivo .env com os valores abaixo:
+
+```bash
+PORT=3000
+DATABASE_URL="file:./dev.db"
 ```
 
 ### 4. Configurar o banco de dados
@@ -120,17 +127,17 @@ yarn prisma:studio
 yarn dev
 ```
 
-A aplicação deverá iniciar localmente em uma porta definida no projeto, por exemplo:
-
-```text
-http://localhost:3000
-```
-
 ### 6. Rodar a aplicação em modo produção
 
 ```bash
 yarn build
 yarn start
+```
+
+A API ficará disponível em:
+
+```text
+http://localhost:3000/api/v1/references
 ```
 
 ## Como executar testes unitários
@@ -152,9 +159,9 @@ Os scripts abaixo são os esperados para o projeto:
 ```json
 {
   "scripts": {
-    "dev": "nodemon src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js",
+    "dev": "nodemon --exec ts-node -r tsconfig-paths/register src/app.ts",
+    "build": "tsc && tsc-alias",
+    "start": "node dist/src/app.js",
     "prisma:dev": "prisma migrate dev",
     "prisma:prod": "prisma migrate deploy",
     "prisma:seed": "prisma db seed",
@@ -170,7 +177,7 @@ Os scripts abaixo são os esperados para o projeto:
 ### Criar uma referência
 
 ```http
-POST /references
+POST /api/v1/references
 Content-Type: application/json
 ```
 
@@ -190,7 +197,7 @@ Content-Type: application/json
 ### Buscar referências com filtros
 
 ```http
-GET /references?category=livro&status=pending&rating=5
+GET  /api/v1/references?category=livro&status=pending
 ```
 
 ## Roadmap de Releases
