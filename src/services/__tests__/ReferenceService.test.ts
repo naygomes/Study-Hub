@@ -1,7 +1,7 @@
 import { ReferenceService } from "@services";
 import { ReferenceRepository } from "@repositories";
 import { NotFoundError } from "@errors";
-import { MOCK_REFERENCE } from "./reference.mock";
+import { MOCK_REFERENCE_SERVICE } from "../../__mocks__/referenceService.mock";
 
 const mockRepository: jest.Mocked<ReferenceRepository> = {
   findAll: jest.fn(),
@@ -21,16 +21,16 @@ beforeEach(() => {
 describe("ReferenceService", () => {
   describe("getAll", () => {
     it("should return all references when no filters are provided", async () => {
-      mockRepository.findAll.mockResolvedValue([MOCK_REFERENCE]);
+      mockRepository.findAll.mockResolvedValue([MOCK_REFERENCE_SERVICE]);
 
       const result = await service.getAll();
 
       expect(mockRepository.findAll).toHaveBeenCalledWith({});
-      expect(result).toEqual([MOCK_REFERENCE]);
+      expect(result).toEqual([MOCK_REFERENCE_SERVICE]);
     });
 
     it("should return filtered references when filters are provided", async () => {
-      mockRepository.findAll.mockResolvedValue([MOCK_REFERENCE]);
+      mockRepository.findAll.mockResolvedValue([MOCK_REFERENCE_SERVICE]);
 
       const result = await service.getAll({
         category: "livro",
@@ -41,7 +41,7 @@ describe("ReferenceService", () => {
         category: "livro",
         status: "pending",
       });
-      expect(result).toEqual([MOCK_REFERENCE]);
+      expect(result).toEqual([MOCK_REFERENCE_SERVICE]);
     });
 
     it("should return empty array when no references match filters", async () => {
@@ -61,12 +61,12 @@ describe("ReferenceService", () => {
 
   describe("getById", () => {
     it("should return reference when it exists", async () => {
-      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE);
+      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE_SERVICE);
 
       const result = await service.getById(1);
 
       expect(mockRepository.findById).toHaveBeenCalledWith(1);
-      expect(result).toEqual(MOCK_REFERENCE);
+      expect(result).toEqual(MOCK_REFERENCE_SERVICE);
     });
 
     it("should throw NotFoundError when reference does not exist", async () => {
@@ -87,7 +87,7 @@ describe("ReferenceService", () => {
 
   describe("create", () => {
     it("should create and return reference when data is valid", async () => {
-      mockRepository.create.mockResolvedValue(MOCK_REFERENCE);
+      mockRepository.create.mockResolvedValue(MOCK_REFERENCE_SERVICE);
 
       const result = await service.create({
         title: "Clean Code",
@@ -97,7 +97,7 @@ describe("ReferenceService", () => {
       });
 
       expect(mockRepository.create).toHaveBeenCalledTimes(1);
-      expect(result).toEqual(MOCK_REFERENCE);
+      expect(result).toEqual(MOCK_REFERENCE_SERVICE);
     });
 
     it("should throw when repository throws an error", async () => {
@@ -116,11 +116,11 @@ describe("ReferenceService", () => {
 
   describe("update", () => {
     it("should update and return reference when it exists", async () => {
-      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE);
+      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE_SERVICE);
       mockRepository.update.mockResolvedValue({
-        ...MOCK_REFERENCE,
+        ...MOCK_REFERENCE_SERVICE,
         title: "Clean Code Atualizado",
-      } as typeof MOCK_REFERENCE);
+      } as typeof MOCK_REFERENCE_SERVICE);
 
       const result = await service.update(1, {
         title: "Clean Code Atualizado",
@@ -131,7 +131,7 @@ describe("ReferenceService", () => {
         title: "Clean Code Atualizado",
       });
       expect(result).toEqual({
-        ...MOCK_REFERENCE,
+        ...MOCK_REFERENCE_SERVICE,
         title: "Clean Code Atualizado",
       });
     });
@@ -146,7 +146,7 @@ describe("ReferenceService", () => {
     });
 
     it("should throw when repository throws an error on update", async () => {
-      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE);
+      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE_SERVICE);
       mockRepository.update.mockRejectedValue(new Error("Repository error"));
 
       await expect(service.update(1, { title: "Novo título" })).rejects.toThrow(
@@ -157,7 +157,7 @@ describe("ReferenceService", () => {
 
   describe("delete", () => {
     it("should delete reference when it exists", async () => {
-      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE);
+      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE_SERVICE);
       mockRepository.delete.mockResolvedValue(undefined);
 
       await service.delete(1);
@@ -174,7 +174,7 @@ describe("ReferenceService", () => {
     });
 
     it("should throw when repository throws an error on delete", async () => {
-      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE);
+      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE_SERVICE);
       mockRepository.delete.mockRejectedValue(new Error("Repository error"));
 
       await expect(service.delete(1)).rejects.toThrow("Repository error");
@@ -183,18 +183,18 @@ describe("ReferenceService", () => {
 
   describe("updateRating", () => {
     it("should update rating and return reference when it exists", async () => {
-      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE);
+      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE_SERVICE);
       mockRepository.updateRating.mockResolvedValue({
-        ...MOCK_REFERENCE,
+        ...MOCK_REFERENCE_SERVICE,
         rating: 3,
-      } as typeof MOCK_REFERENCE);
+      } as typeof MOCK_REFERENCE_SERVICE);
 
       const result = await service.updateRating(1, 3);
 
       expect(mockRepository.findById).toHaveBeenCalledWith(1);
       expect(mockRepository.updateRating).toHaveBeenCalledWith(1, 3);
       expect(result).toEqual({
-        ...MOCK_REFERENCE,
+        ...MOCK_REFERENCE_SERVICE,
         rating: 3,
       });
     });
@@ -207,7 +207,7 @@ describe("ReferenceService", () => {
     });
 
     it("should throw when repository throws an error on updateRating", async () => {
-      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE);
+      mockRepository.findById.mockResolvedValue(MOCK_REFERENCE_SERVICE);
       mockRepository.updateRating.mockRejectedValue(
         new Error("Repository error"),
       );

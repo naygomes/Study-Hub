@@ -1,4 +1,4 @@
-export const MOCK_REFERENCE = {
+export const MOCK_REFERENCE_SERVICE = {
   id: 1,
   title: "Clean Code",
   description: "Boas práticas",
