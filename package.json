@@ -15,7 +15,12 @@
     "prisma:seed": "prisma db seed",
     "prisma:studio": "prisma studio",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "setup": "yarn install && [ -f .env ] || cp .env.example .env",
+    "setup:dev": "yarn setup && yarn prisma:dev && yarn prisma:seed",
+    "setup:prod": "yarn setup && yarn prisma:prod && yarn prisma:seed && yarn build",
+    "up:dev": "yarn setup:dev && yarn dev",
+    "up": "yarn setup:prod && yarn start"
   },
   "repository": {
     "type": "git",
