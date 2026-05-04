@@ -80,58 +80,16 @@ git clone https://github.com/naygomes/Study-Hub.git
 cd studyHub
 ```
 
-### 2. Instalar as dependências
+### 2. Rodar a aplicação em modo desenvolvimento
 
 ```bash
-yarn install
-```
-
-### 3. Configurar as variáveis de ambiente
-
-Crie um arquivo .env na raiz do projeto com base no .env.example:
-
-```bash
-cp .env.example .env
-```
-
-Preencha o arquivo .env com os valores abaixo:
-
-```bash
-PORT=3000
-DATABASE_URL="file:./dev.db"
-```
-
-### 4. Configurar o banco de dados
-
-Como o projeto utiliza Prisma com SQLite, gere o banco local com:
-
-```bash
-yarn prisma:prod
-```
-
-Para popular o banco com um seed básico:
-
-```bash
-yarn prisma:seed
-```
-
-Se necessário, também é possível abrir o Prisma Studio com:
-
-```bash
-yarn prisma:studio
-```
-
-### 5. Rodar a aplicação em modo desenvolvimento
-
-```bash
-yarn dev
+yarn up:dev
 ```
 
 ### 6. Rodar a aplicação em modo produção
 
 ```bash
-yarn build
-yarn start
+yarn up
 ```
 
 A API ficará disponível em:
