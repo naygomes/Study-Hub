@@ -152,10 +152,53 @@ Content-Type: application/json
 }
 ```
 
+### Buscar referências sem filtros
+
+```http
+GET  /api/v1/references
+```
+
 ### Buscar referências com filtros
 
 ```http
-GET  /api/v1/references?category=livro&status=pending
+GET  /api/v1/references?category=livro&status=pending&tag=typescript
+```
+
+### Buscar referência por Id
+
+```http
+GET  /api/v1/references/1
+```
+
+### Atualizar referência
+
+```http
+PATCH  /api/v1/references/1
+```
+
+```json
+{
+  "title": "Clean Code Atualizado",
+  "status": "completed"
+}
+```
+
+### Atualizar nota de avaliação da referência
+
+```http
+PATCH  /api/v1/references/1/rating
+```
+
+```json
+{
+  "rating": 4
+}
+```
+
+### Deletar referência
+
+```http
+DELETE  /api/v1/references/1
 ```
 
 ## Roadmap de Releases
@@ -209,3 +252,7 @@ Em relação aos modelos utilizados, o GPT-5.4 foi empregado nas etapas de requi
 ## Licença
 
 Este projeto pode ser licenciado futuramente conforme a necessidade do contexto acadêmico.
+
+```
+
+```
