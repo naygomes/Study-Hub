@@ -1,2 +1,2 @@
-export * from "./validateReference";
+export * from "./validate";
 export * from "./errorHandler";
